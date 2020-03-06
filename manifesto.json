@@ -2,16 +2,18 @@
 	"short_name": "Miidm App",
 	"name": "MiidmApp",
 	"icons": [{
-		"src": "/res/img512.png",
-		"type": "image/png",
-		"sizes": "192x192"
-		"src": "/res/img256.png",
-		"type": "image/png",
-		"sizes": "192x192"
-		"src": "/res/img192.png",
-		"type": "image/png",
-		"sizes": "192x192"
-	}],
+			"src": "/res/img512.png",
+			"type": "image/png",
+			"sizes": "512x512"},
+		{
+			"src": "/res/img256.png",
+			"type": "image/png",
+			"sizes": "256x256"},
+		{
+			"src": "/res/img192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+	],
 	"start_url": "index.html",
 	"background_color": "#f1c40e",
 	"display": "standalone",
