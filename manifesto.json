@@ -13,7 +13,7 @@
 			"src": "/res/img192.png",
 			"type": "image/png",
 			"sizes": "192x192"
-	],
+		}],
 	"start_url": "index.html",
 	"background_color": "#f1c40e",
 	"display": "standalone",
