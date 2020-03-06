@@ -1,11 +1,20 @@
+@font-face {
+   font-family: 'myFirstFont';
+   src: url('./media/josefinSans/JosefinSans-Regular.ttf') format('truetype');
+}
+
+* {
+   font-family: myFirstFont;
+}
+
 body {
-  background-color: #34495e;
   width: 100%;
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
-#navbar_Topnav {
+#navbar_topnav {
   display: grid;
   grid-template-columns: 20% 60% 20%;
   width: 100%;
@@ -14,6 +23,7 @@ body {
   padding: 1px;
   background-color: #f1c40e;
 }
+
 #navbar_divTitoloTopNav {
   margin: 0;
   height: 9vh;
@@ -41,10 +51,22 @@ body {
   padding-left: 9vw;
 }
 
-#navbar_mySidenav {
+#navbar_divSidenav {
+  display: grid;
+  grid-template-columns: 65vw 35vw;
   width: 0;
-  height: calc(100% - 9vh);
+  height: 100vh;
+  position: inherit;
   top: 9vh;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#navbar_mySidenav {
   background-color: #f1c40e;
   transition: 0.5s;
+  width: 0;
+}
+
+#navbar_divChiusuraSidenav {
+  width: 0;
 }
