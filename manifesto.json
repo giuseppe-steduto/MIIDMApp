@@ -1,0 +1,19 @@
+{
+	"short_name": "Miidm App",
+	"name": "MiidmApp",
+	"icons": [{
+		"src": "/res/img512.png",
+		"type": "image/png",
+		"sizes": "192x192"
+		"src": "/res/img256.png",
+		"type": "image/png",
+		"sizes": "192x192"
+		"src": "/res/img192.png",
+		"type": "image/png",
+		"sizes": "192x192"
+	}],
+	"start_url": "index.html",
+	"background_color": "#f1c40e",
+	"display": "standalone",
+	"theme_color": "#f1c40e"
+}
