@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400&display=swap');
+
+body {
+    background-color: #34495e;
+    margin: 0;
+}
+
+* {
+    font-family: "Josefin Sans";
+}
+
+input#keyword {
+    margin: 1rem;
+    border-radius: 1rem;
+    height: 2rem;
+    border: 1px solid #f1c40e;
+    color: #f1c40e;
+    background-color: #34495e;
+    width: calc(100vw - 2rem);
+    padding-left: 0.5rem;
+    transition: all .25s ease;
+    box-sizing: border-box;
+}
+input#keyword:focus {
+    outline: none;
+    background-color: #f1c40e;
+    color: #34495e;
+}
+
+p#didascaliaRicerca {
+    width: 70%;
+    font-size: 1.2rem;
+    color: #f1c40e;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem 0 1rem 0;
+}
+
+div#container_sezioni {
+    display: grid;
+    width: 66vw;
+    margin-top: 12vw;
+    margin-left: 17%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 15px;
+    height: 66vw;
+    transform: rotate(45deg);
+}
+
+article.sezione {
+    background-color: #34495e;
+    display: grid;
+}
+article.sezione > div {background-color: #f1c40e;}
+
+article.sezione div.immagine_testo_sezione {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+article.sezione div.container_immagine {
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
+}
+article.sezione p {
+    text-align: center;
+    color: #34495e;
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem;
+    padding-top: 5px;
+}
+
+article.sezione img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+article#I {
+    border-left: 2px solid #f1c40e;
+    border-top: 2px solid #f1c40e;
+    grid-template-columns: 15px auto;
+    grid-template-rows: 15px auto;
+    grid-template-areas: ". ."
+                         ". I";
+}
+article#I div {grid-area: I;}
+
+article#E {
+    border-right: 2px solid #f1c40e;
+    border-top: 2px solid #f1c40e;
+    grid-template-columns: auto 15px;
+    grid-template-rows: 15px auto;
+    grid-template-areas: ".    ."
+                         "E    .";
+}
+article#E div {grid-area: E;}
+
+article#M {
+    border-left: 2px solid #f1c40e;
+    border-bottom: 2px solid #f1c40e;
+    grid-template-columns: 15px auto;
+    grid-template-rows: auto 15px;
+    grid-template-areas: ". M"
+                         ". .";
+}
+article#M div {grid-area: M;}
+
+article#S {
+    border-right: 2px solid #f1c40e;
+    border-bottom: 2px solid #f1c40e;
+    grid-template-columns: auto 15px;
+    grid-template-rows: auto 15px;
+    grid-template-areas: "S . "
+                         ". .";
+}
+article#S div {grid-area: S;}
+
+@media only screen and (min-device-aspect-ratio: 5/8) {
+    div#container_sezioni {
+        transform: rotate(0deg);
+        margin-top: 5vw;
+    }
+
+    article.sezione div.immagine_testo_sezione {
+        transform: rotate(0deg);
+    }
+}

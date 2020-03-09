@@ -18,8 +18,9 @@ nav#navbar_topNav {
   grid-template-columns: 20% 60% 20%;
   width: 100%;
   height: 9vh;
+  box-sizing: border-box;
   background-color: #f1c40e;
-  z-index: 3;
+  z-index: 4;
 }
 
 #navbar_divTitoloTopNav {
@@ -63,7 +64,7 @@ nav#navbar_topNav {
   height: 91vh;
   position: absolute;
   left: -65vw;
-  z-index: 3;
+  z-index: 4;
 }
 
 .navbar_divSelezioniSidenav {
@@ -96,7 +97,7 @@ nav#navbar_topNav {
   color: #34495e;
 }
 
-#navbar_divChiusuraSidenav {
+#divOscuramento {
     position: fixed;
     z-index: -4;
     opacity: 0;

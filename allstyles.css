@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400&display=swap');
+@import "navbar.css";
+@import "bottom-navbar.css";
+@import "elencoReperti.css";
+@import "ricerca.css";
+
+body {
+    background-color: #34495e;
+}
