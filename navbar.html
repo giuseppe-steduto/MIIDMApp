@@ -1,0 +1,56 @@
+<nav id = "navbar_topNav">
+  <div class = "navbar_divIconeTopNav"><img class = "navbar_iconeTopNav" id = "hamburgerButton" src = "./res/hamburgerButton.svg" onclick="navbar_openSidenav()"></img></div>
+  <div id = "navbar_divTitoloTopNav"><p id = "navbar_titoloTopNav">MIIDM App</p></div>
+  <div class = "navbar_divIconeTopNav"><img id = "navbar_logoTopNav" class = "navbar_iconeTopNav" src = "./res/logo.png"></img></div>
+</nav>
+  <nav id="navbar_mySidenav">
+    <div class = "navbar_divSelezioniSidenav">
+      <div class = "navbar_divIconeSelezioniSidenav"><img class = "navbar_iconeSelezioniSidenav" src = "./res/esplora.svg"></img></div>
+      <div class = "navbar_divLinkSelezioniSidebar"><a class = "navbar_linkSelezioniSidenav">Esplora</a></div>
+    </div>
+    <div class = "navbar_divSelezioniSidenav">
+      <div class = "navbar_divIconeSelezioniSidenav"><img class = "navbar_iconeSelezioniSidenav" src = "./res/qrcode.svg"></img></div>
+      <div class = "navbar_divLinkSelezioniSidebar"><a class = "navbar_linkSelezioniSidenav">QR Code</a></div>
+    </div>
+    <div class = "navbar_divSelezioniSidenav">
+      <div class = "navbar_divIconeSelezioniSidenav"><img class = "navbar_iconeSelezioniSidenav" src = "./res/guidaAlMuseo.svg"></img></div>
+      <div class = "navbar_divLinkSelezioniSidebar"><a class = "navbar_linkSelezioniSidenav">Guida al museo</a></div>
+    </div>
+    <div class = "navbar_divSelezioniSidenav">
+      <div class = "navbar_divIconeSelezioniSidenav"><img class = "navbar_iconeSelezioniSidenav" src = "./res/info.svg"></img></div>
+      <div class = "navbar_divLinkSelezioniSidebar"><a class = "navbar_linkSelezioniSidenav">Info</a></div>
+    </div>
+    <div class = "navbar_divSelezioniSidenav">
+      <div class = "navbar_divIconeSelezioniSidenav"><img class = "navbar_iconeSelezioniSidenav" src = "./res/lingua.svg"></img></div>
+      <div class = "navbar_divLinkSelezioniSidebar"><a class = "navbar_linkSelezioniSidenav">Lingua</a></div>
+    </div>
+    <div class = "navbar_divSelezioniSidenav">
+      <div class = "navbar_divIconeSelezioniSidenav"><img class = "navbar_iconeSelezioniSidenav" src = "./res/sostienici.svg"></img></div>
+      <div class = "navbar_divLinkSelezioniSidebar"><a class = "navbar_linkSelezioniSidenav">Sostienici</a></div>
+    </div>
+    <div class = "navbar_divSelezioniSidenav">
+      <div class = "navbar_divIconeSelezioniSidenav"><img class = "navbar_iconeSelezioniSidenav" src = "./res/segnalaUnBug.svg"></img></div>
+      <div class = "navbar_divLinkSelezioniSidebar"><a class = "navbar_linkSelezioniSidenav">Segnala un bug</a></div>
+    </div>
+    <div class = "navbar_divSelezioniSidenav" style = "bottom: 0; position: absolute">
+      <div class = "navbar_divIconeSelezioniSidenav"><img class = "navbar_iconeSelezioniSidenav" src = "./res/login.svg"></img></div>
+      <div class = "navbar_divLinkSelezioniSidebar"><a class = "navbar_linkSelezioniSidenav">Login</a></div>
+    </div>
+  </nav>
+  <div id = "navbar_divChiusuraSidenav" onclick="navbar_closeSidenav()"></div>
+
+<script>
+  function navbar_openSidenav() {
+  document.getElementById("navbar_mySidenav").style.left = "0";
+  document.getElementById("hamburgerButton").src = "./res/chiudi.svg";
+  document.getElementById("hamburgerButton").onclick = function() {navbar_closeSidenav()};
+  document.getElementById("navbar_divChiusuraSidenav").style.opacity = "0.7";
+}
+
+function navbar_closeSidenav() {
+  document.getElementById("navbar_mySidenav").style.left = "-65vw";;
+  document.getElementById("hamburgerButton").src = "./res/hamburgerButton.svg";
+  document.getElementById("hamburgerButton").onclick = function() {navbar_openSidenav()};
+  document.getElementById("navbar_divChiusuraSidenav").style.opacity = "0";
+}
+</script>
