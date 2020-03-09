@@ -59,22 +59,30 @@ self.addEventListener('fetch', event => {
       //se va a bun fine:
       //1) faccio il caching della request
       var r1 = response.clone();
-      caches.open(cacheName('attuale', config)).then(cache => {
-        cache.put(event.request, r1);
-      });
-      //2) la Promise va a fullfill con il return della response
-      return response;
-    }).catch(() => {
+      var stato = response.status;
+      //2) verifico se la risorsa è disponibile
+      if(stato == 200){
+        console.log("Lo stato è "+stato+" :)");
+        caches.open(cacheName('attuale', config)).then(cache => {
+          cache.put(event.request, r1);
+        });
+        //2.1) la Promise va a fullfill con il return della response
+        return response;
+      }
+      console.log("Lo stato è "+stato+" :(");
+      //1.err) se non è disponibile return vuoto
+      return Promise.reject(new Error('not 200'));
+    }).catch(value => {
       //se il fatch ha fallito la Promise sarà Pending
       //provo a fare un match nella mia cache
+      console.log("1 reject:",value);
       return caches.open(cacheName('attuale', config)).then(cache => {
         var cr= cache.match(event.request);
         console.log("cache.match:",cr);
-        return cr;
-      }).catch( error => {
+        return Promise.reject(new Error('not in cache'));
+      }).catch( value => {
         //se il match nella cache fallisce genererà un errore e la Promise sarà rejected
-        console.error("Fatch error:",error);
-        error.reject();
+        console.error("Fatch error:",value);
       });
       })
      );
