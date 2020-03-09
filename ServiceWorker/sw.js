@@ -2,24 +2,59 @@
 
 // Array di configurazione del service worker
 var config = {
-  version: 0,
+  //versione del service-worker
+  version: "version:0",
   // Risorse da inserire in cache immediatamente - Precaching
   staticCacheItems: [
-    '/',
-    'index.html'
+    './',
+    'index.html',
+    //Qui vanno le risorse usate da index.html
+    './res/js/index.js',
+    './res/img/Copertine-Facebook-gratis.jpg',
+    './res/img/google-immagini.jpg',
+    './res/js/registration_sw.js',
+    './res/css/index.css'
   ]
 };
 
+function getResFromPage(){
+  var imgs = document.getElementsByTagName("img");
+  var scripts = document.getElementsByTagName("script");
+  var links = document.getElementsByTagName("link");
+  var il = imgs.length;
+  var sl = scripts.length;
+  var ll = links.length;
+
+  for(var i=0; i<il; i++){
+    config.staticCacheItems.push(imgs[i].src);
+  }
+  for(var j=0; j<sl; j++){
+    config.staticCacheItems.push(scripts[j].src);
+  }
+  for(var k=0; k<ll; k++){
+    config.staticCacheItems.push(links[k].src);
+  }
+
+  return config.staticCacheItems;
+}
+
+/*config.staticCacheItems = getResFromPage();
+config.staticCacheItems.push('./');*/
+
 // Funzione che restituisce una stringa da utilizzare come chiave(nome) per la cache
 function cacheName(key, opts) {
- return key+opts;
+  return key+"#"+opts.version;
 }
 
 // Evento install
 self.addEventListener('install', event => {
- event.waitUntil(
+  //Error: document not defined
+  //getResFromPage();
+  event.waitUntil(
+   //console.log(getResFromPage());
+
    // Inserisco in cache le URL configurate in config.staticCacheItems
-   caches.open( cacheName('static', config) ).then(cache => cache.addAll(config.staticCacheItems))
+   caches.open(cacheName('MIIDM', config)).then(cache => cache.addAll(config.staticCacheItems))
    // self.skipWaiting() evita l'attesa, il che significa che il service worker si attiverà immediatamente non appena conclusa l'installazione
    .then( () => self.skipWaiting() )
  );
@@ -34,7 +69,7 @@ self.addEventListener('activate', event => {
  function clearCacheIfDifferent(event, opts) {
    return caches.keys().then(cacheKeys => {
      var oldCacheKeys = cacheKeys.filter(key => {
-       return (key.indexOf(opts.version) != 0 || opts.version < config.version);
+       return (key.indexOf(opts.version) < 0);
      });
      var deletePromises = oldCacheKeys.map(oldKey => caches.delete(oldKey));
      return Promise.all(deletePromises);
@@ -63,7 +98,7 @@ self.addEventListener('fetch', event => {
       //2) verifico se la risorsa è disponibile
       if(stato == 200){
         console.log("Lo stato è "+stato+" :)");
-        caches.open(cacheName('attuale', config)).then(cache => {
+        caches.open(cacheName('MIIDM', config)).then(cache => {
           cache.put(event.request, r1);
         });
         //2.1) la Promise va a fullfill con il return della response
@@ -76,10 +111,10 @@ self.addEventListener('fetch', event => {
       //se il fatch ha fallito la Promise sarà Pending
       //provo a fare un match nella mia cache
       console.log("1 reject:",value);
-      return caches.open(cacheName('attuale', config)).then(cache => {
-        var cr= cache.match(event.request);
+      return caches.open(cacheName('MIIDM', config)).then(cache => {
+        var cr = cache.match(event.request);
         console.log("cache.match:",cr);
-        return Promise.reject(new Error('not in cache'));
+        return cr;
       }).catch( value => {
         //se il match nella cache fallisce genererà un errore e la Promise sarà rejected
         console.error("Fatch error:",value);
