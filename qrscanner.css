@@ -1,0 +1,48 @@
+#video{
+  margin: 0;
+  padding: 0;
+  height: 60vh;
+  width: 100%;
+}
+
+#img_scattata{
+  margin: 0;
+  padding: 0;
+  /*height: 0;
+  width: 0;*/
+}
+
+#takePhotoButton {
+  position: fixed;
+  left: calc(50vw - 6vh);
+  bottom: 3vh;
+  margin: 0;
+  padding: 0;
+  height: 12vh;
+  width: 12vh;
+  border-radius: 6vh;
+  background-color: #f1c40e;
+  background-position: top;
+  border: none;
+  outline: none;
+  z-index: 5;
+}
+
+
+#imgPhoto{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    top: calc(50% - 3.75vh);
+    left: calc(50% - 3.75vh);
+    width: 7.5vh;
+    position: absolute;
+}
+
+#istruzioni{
+  text-align: center;
+  color: #f1c40e;
+  padding-top: 1vh;
+  font-size: 5vw;
+}
