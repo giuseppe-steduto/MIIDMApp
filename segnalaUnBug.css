@@ -1,0 +1,99 @@
+@font-face {
+   font-family: 'myFirstFont';
+   src: url('./media/josefinSans/JosefinSans-Regular.ttf') format('truetype');
+}
+
+* {
+   font-family: myFirstFont;
+}
+
+/*blu = #34495e, giallo = #f1c40e*/
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #f1c40e;
+}
+
+#segnalaUnBug_divTitolo {
+  text-align: center;
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#segnalaUnBug_titolo {
+  font-size: 10vw;
+  color: #34495e;
+}
+
+#segnalaUnBug_divForm {
+  height: calc(100% - 6vh - 15vh);
+  width: 100%;
+  align-items: center;
+  display: table;
+}
+
+.segnalaUnBug_titoloDivForm {
+  font-size: 5vw;
+  color: #34495e;
+  margin-left: 10vw;
+}
+
+input[type=text], textarea {
+  height: 5vh;
+  width: 80vw;
+  padding: 2vw 2vw;
+  margin-left: 10vw;
+  display: inline-block;
+  border: 0.5vw solid #ccc;
+  border-radius: 4vw;
+  box-sizing: border-box;
+  font-size: 3vw;
+}
+
+input[type=submit] {
+  width: 80vw;
+  height: 5vh;
+  background-color: #34495e;
+  color: #f1c40e;
+  padding: 2vw 2vw;
+  border: none;
+  border-radius: 4vw;
+  cursor: pointer;
+  margin-left: 10vw;
+  font-size: 3vw;
+  margin-top: 3vh;
+}
+
+textarea {
+  max-width: 80vw;
+  max-height: 27vh;
+  height: 27vh;
+}
+
+.segnalaUnBug_altriInput {
+  margin-top: 1vh;
+}
+
+input:focus::placeholder, textarea:focus::placeholder {
+  color: transparent;
+  font-size: 3vw;
+}
+
+#segnalaUnBug_footer {
+  position: absolute;
+  bottom: 0;
+  height: 6vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #34495e;
+}
+
+#segnalaUnBug_iconaFooter {
+  width: 4vh;
+}
