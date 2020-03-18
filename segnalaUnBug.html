@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Segnala un bug</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="segnalaUnBug.css">
+  </head>
+  <body>
+    <div id = "segnalaUnBug_divTitolo">
+      <h1 id = "segnalaUnBug_titolo">Segnala un bug</h1>
+    </div>
+    <div id = "segnalaUnBug_divForm">
+      <div>
+        <h1 class = "segnalaUnBug_titoloDivForm">Inserisci dati personali</h1>
+        <input type="text" id = "nome" placeholder="Inserisci il tuo nome...">
+        <input type="text" id = "cognome" placeholder="Inserisci il tuo cognome..." class = "segnalaUnBug_altriInput">
+        <input type="text" id = "indirizzoEmail" placeholder="Inserisci il tuo indirizzo e-mail..." class = "segnalaUnBug_altriInput">
+      </div>
+      <div style = "margin-top: 2vh">
+        <h1 class = "segnalaUnBug_titoloDivForm">Scrivi e-mail</h1>
+        <input type="text" id = "oggettoEmail" placeholder="Inserisci l'oggetto...">
+        <textarea type="text" id = "testoEmail" placeholder="Inserisci il testo dell'e-mail..." class = "segnalaUnBug_altriInput"></textarea>
+        <input onclick = "inviaEmail()" value="Invia" id = "segnalaUnBug_tastoInvia">
+      </div>
+    </div>
+    <footer id = "segnalaUnBug_footer">
+      <img id = "segnalaUnBug_iconaFooter" src = "./media/chiudi.svg"></img>
+    </footer>
+    <script>
+      function inviaEmail() {
+        var nome = document.getElementById("nome").value;
+        var cognome = document.getElementById("cognome").value;
+        var indirizzoEmail = document.getElementById("indirizzoEmail").value;
+        var oggettoEmail = document.getElementById("oggettoEmail").value;
+        var testoEmail = document.getElementById("testoEmail").value;
+        var ciao = nome.concat(" ");
+        var nomeEcognome = ciao.concat(cognome);
+        var email = {nome: nomeEcognome, indirizzoEmail: indirizzoEmail, oggettoEmail: oggettoEmail, testoEmail: testoEmail};
+        fetch("./segnalaUnBug.php",
+        {
+          method: "POST",
+          body: JSON.stringify(email)
+        })
+        .then(function(res){alert("Email inviata correttamente.")})
+        .catch(function(res){alert("Errore! Email non inviata.")});
+      }
+    </script>
+  </body>
+</html>
