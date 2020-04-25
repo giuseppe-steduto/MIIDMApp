@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<p id = "didascaliaInfo">Siamo i ragazzi della <strong>5^A informatica</strong> dell'a.s. 2019/2020 dell'<strong>I.T. "Luigi Di Maggio"</strong> di San Giovanni Rotondo e questo è il nostro lavoro <strong>per voi!</strong></p>
+
+<div id = "info_container_sez">
+    <article class = "informazione" id = "Crediti">
+      <h1><strong><center>Crediti</center></strong></h1>
+      <h5><center>&#149;5^A informatica<br>&#149;Prof. De Bonis Michelangelo<br>&#149;Prof. Tamburrano Pietro<br><br></center></h5>
+    </article>
+    <article class = "informazione" id = "Contatti">
+      <h1><strong><center>Contattaci</center></strong></h1>
+      <div id = "contattaci">
+        <img src = "res/mail.png" onclick = "window.location = 'mailto:pippopluto@gmail.com'" />
+        <img src = "res/phone.png" onclick = "window.location = 'tel:1234567890'" />
+      </div>
+    </article>
+    <article class = "informazione" id = "Trovaci">
+      <h1><strong><center>Come raggiungerci</center></strong></h1>
+      <div id = "trovandoci">
+        <a href = "https://www.google.it/maps/place/I.S.I.S.+%22Luigi+di+Maggio%22/@41.7020983,15.7272986,17z/data=!3m1!4b1!4m5!3m4!1s0x1337742bfb35d46d:0x58561ae6ec32bb8b!8m2!3d41.7020943!4d15.7294873"> <img src = "res/maps.png" /> </a>
+      </div>
+    </article>
+    <article class = "informazione" id = "Orari">
+      <h1><strong><center>Orari</center></strong></h1>
+      <h5><center>Lun. - Ven.<br>09:00 - 13:00<br>16:00 - 18:00<br><br>Sabato<br>09:00 - 13:00</center></h5>
+    </article>
+    <div id = "loghi_social">
+      <a href = "../qrCode/script/easterEgg.html"> <img src = "res/facebook.png" /> </a>
+      <a href = "https://www.instagram.com/miidm_isis/"> <img src = "res/instagram.png" /> </a>
+      <img src = "res/share.png" id = "share"/>
+    </div>
+</div>
+<script>
+  document.getElementById("share").addEventListener("click", function () {
+    if (navigator.share !== undefined) {
+      navigator.share({
+        title: 'MIIDM App',
+        text: 'Vieni a scoprire il MIIDM!',
+        url: 'https://databasereperti.altervista.org/',
+      })
+      .then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+    }
+    console.log("Sono entrato nella funzione");
+  });
+</script>

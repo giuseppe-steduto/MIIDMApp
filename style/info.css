@@ -1,0 +1,130 @@
+p#didascaliaInfo {
+    width: 85%;
+    font-size: 1.2rem;
+    color: #f1c40e;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem 0 1.5rem 0;
+}
+p.intestazione {
+    padding-top: 1rem;
+}
+
+div#info_container_sez {
+    display: grid;
+    width: 75vw;
+    margin-top: 2.5vw;
+    margin-left: 13%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    transform: rotate(0deg);
+    grid-gap: 15px;
+    height: 75vw;
+}
+
+article.informazione {
+    background-color: #f1c40e;
+    width: 100%;
+    height: 100%;
+    border: 0 !important;
+    box-sizing: border-box;
+}
+
+article h1 {
+  font-size: 1.1rem;
+}
+
+div#contattaci {
+  margin-left: 20%;
+  background-color: #f1c40e;
+  width: 60%;
+  height: 60%;
+}
+
+div#contattaci img{
+  width: 45%;
+  height: 45%;
+  margin-left: 5%;
+  margin-top: 20%;
+  float: left;
+}
+
+div#trovandoci {
+  margin-left: 25%;
+  background-color: transparent;
+  width: 60%;
+  height: 60%;
+}
+
+div#trovandoci img{
+  width: 45%;
+  height: 45%;
+  margin-left: 22%;
+  margin-top: 13.5%;
+  float: left;
+}
+
+div#loghi_social {
+  margin-left: 0 auto;
+  background-color: #f1c40e;
+  width: 210%;
+  height: 120%;
+}
+
+div#loghi_social img{
+  width: 10vw;
+  height: 10vw%;
+  margin-left: 15%;
+  margin-top: 4%;
+  float: left;
+}
+
+article#Crediti {
+    border-left: 2px solid #f1c40e;
+    border-top: 2px solid #f1c40e;
+    grid-template-columns: 15px auto;
+    grid-template-rows: 15px auto;
+    border: 0 !important;
+    box-sizing: border-box;
+    grid-template-areas: "C  ."
+                         ".  .";
+}
+article#Crediti div {grid-area: C;}
+
+article#Contatti {
+    border-right: 2px solid #f1c40e;
+    border-top: 2px solid #f1c40e;
+    grid-template-columns: auto 15px;
+    grid-template-rows: 15px auto;
+    border: 0 !important;
+    box-sizing: border-box;
+    grid-template-areas: ".  P"
+                         ".  .";
+}
+article#Contatti div {grid-area: P;}
+
+article#Trovaci {
+    border-left: 2px solid #f1c40e;
+    border-bottom: 2px solid #f1c40e;
+    grid-template-columns: 15px auto;
+    grid-template-rows: auto 15px;
+    border: 0 !important;
+    box-sizing: border-box;
+    background-image: url("../res/background_info_maps.png");
+    background-size: cover;
+    grid-template-areas: ".  ."
+                         "T  .";
+}
+article#Trovaci div {grid-area: T;}
+
+article#Orari {
+    border-right: 2px solid #f1c40e;
+    border-bottom: 2px solid #f1c40e;
+    grid-template-columns: auto 15px;
+    grid-template-rows: auto 15px;
+    border: 0 !important;
+    box-sizing: border-box;
+    grid-template-areas: ".  ."
+                         ".  O";
+}
+article#Orari div {grid-area: O;}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<div id="istruzioni">
+  <span>Fai una foto al qr code del reperto </br> per visualizzarne la scheda</span>
+</div>
+<input type = "range" value = "50" style = "display: none;" />
+<div id="contenitore_video">
+  <div class="inquadratura" id="inquadratura_tl"></div>
+  <div class="inquadratura" id="inquadratura_tr"></div>
+  <div class="inquadratura" id="inquadratura_bl"></div>
+  <div class="inquadratura" id="inquadratura_br"></div>
+  <video id="video" autoplay></video>
+</div>
+<canvas id="#img_scattata" width = "600" height="600"></canvas>
+<div id = "takePhotoButton" onclick = "onTakePhotoButtonClick()" style = "opacity: 0;">
+</div>
+<audio id="scatto">
+  <source src="res/suonoFoto.mp3" type="audio/mpeg">
+</audio>
