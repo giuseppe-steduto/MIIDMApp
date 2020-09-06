@@ -1,8 +1,10 @@
-        <button id="bottom-nav_button-qr" onclick="clickQR()">
+        <!--Bottone del QR Code-->
+	<button id="bottom-nav_button-qr" onclick="clickQR()">
             <img id="qrc" src="./res/qr-code.svg" alt="qr-code"/>
         </button>
 		#Bocci puzza
         <nav id="bottom-nav">
+		<!--Le due celle della tabella contengono i due pulsanti "home" e "cerca" della barra di navigazione inferiore-->
             <table>
                 <tr id="nav_options">
                     <td>
@@ -22,6 +24,7 @@
                         </button>
 
                         <script>
+			    /* Funzioni per l'animazione del simbolo QR e cose esteticamente fighe della pagina */
                             function paginaScannerizzazione() {
                                 document.getElementById('divOscuramento').style.opacity = "0";
                                 document.getElementById('divOscuramento').style.zIndex = "-100";
@@ -50,7 +53,8 @@
                                 document.getElementById('bottom-nav_button-qr').style.transform = "rotate(360deg)";
                                 setTimeout(fillBlu, 600);
                             }
-                            function animOptHF(){ //operazioni dopo 150ms dal click di Home
+                            function animOptHF(){ 
+				//operazioni dopo 150ms dal click di Home
                                 document.getElementById('searchE').style.top = "calc(45% - 2.25vh)";
                                 document.getElementById('homeF').style.opacity = "1";
                                 document.getElementById('homeE').style.opacity = "0";
