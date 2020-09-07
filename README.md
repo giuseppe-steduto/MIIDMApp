@@ -38,7 +38,7 @@ Prima di poter rendere operativa la PWA, è necessario svolgere alcune operazion
 - Importare il file `databaseReperti.sql` nel proprio DBMS per avere con sé i dati dei reperti
 
 ## Ulteriori documenti
-- Diagramma concettuale del database e della struttura: Clicca [qui](https://drive.google.com/file/d/11z2JlSTgXXECZm4DbHjfTjlhrkArFwit/view?usp=sharing).
+- Video tutorial e presentazione dell'app: Clicca [qui](https://drive.google.com/file/d/169M5yHPrrIfFpcWQDnKis5l-MhNmDXSO/view?usp=sharing) (non ho potuto caricarlo su GitHub per il limite di 25 MB sull'upload).
 
 ## Contatti
 Hai ancora qualche piccolo dubbio? Non c'hai capito na mazza? Contattami con una mail a [peppesteduto@gmail.com](mailto:peppesteduto@gmail.com)!
