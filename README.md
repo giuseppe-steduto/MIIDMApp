@@ -10,7 +10,7 @@ Il nucleo di tutta l'app è il file `index.php`. Al suo interno, infatti, le div
 Per non appesantire troppo il caricamento iniziale dell'app, tutte le pagine "secondarie" sono caricate tramite AJAX dallo script (in modo asincrono, dunque), eccetto le componenti necessarie alla visualizzazione della shell (es. `navbar.html`, che sono incluse direttamente in `index.php`).
 
 ## Descrizione approfondita delle componenti
-*Questa sezione ha lo scopo di approfondire il funzionamento di alcune pagine e come queste interagiscano tra loro. Tuttavia essa è inutile senza la documentazione costituita dai commenti, all'interno degli altri file.*
+*Questa sezione ha lo scopo di approfondire il funzionamento di alcune pagine e come queste interagiscano tra loro. Tuttavia essa è inutile senza la documentazione costituita dai commenti, dal video tutorial e dai diagrammi nella cartella "docs".*
 ### Requisiti PWA
 - Il file `manifest.json` descrive le caratteristiche della Progressive Web App affinchè possa essere installata tramite il browser del dispositivo.
 ### Script Javascript
