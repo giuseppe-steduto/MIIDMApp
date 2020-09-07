@@ -25,6 +25,24 @@
 
                         <script>
 			    /* Funzioni per l'animazione del simbolo QR e cose esteticamente fighe della pagina */
+			    function clickQR() {
+                            	// quando si clicca QR Code, porta il logo al centro della pagina
+                                document.getElementById('bottom-nav_button-qr').style.zIndex = "101";
+                                document.getElementById('bottom-nav_button-qr').style.bottom = "calc(50% - 6vh)";
+                                document.getElementById('bottom-nav_button-qr').style.transform = "rotate(360deg)";
+                                setTimeout(fillBlu, 600);
+                            }
+			    function fillBlu() {
+                                document.getElementById('divOscuramento').style.zIndex = "100";
+                                document.getElementById('divOscuramento').style.opacity = "0.7";
+                                document.getElementById('bottom-nav_button-qr').style.backgroundPosition = "bottom";
+                                setTimeout(fillGiallo, 600);
+                            }
+                            function fillGiallo() {
+                                document.getElementById('qrc').src = "./res/logo_icona.png";
+                                document.getElementById('bottom-nav_button-qr').style.backgroundPosition = "top";
+                                setTimeout(paginaScannerizzazione, 700);
+                            }
                             function paginaScannerizzazione() {
                                 document.getElementById('divOscuramento').style.opacity = "0";
                                 document.getElementById('divOscuramento').style.zIndex = "-100";
@@ -35,24 +53,8 @@
 
                                 caricaPaginaQR();
                             }
-                            function fillGiallo() {
-                                document.getElementById('qrc').src = "./res/logo_icona.png";
-                                document.getElementById('bottom-nav_button-qr').style.backgroundPosition = "top";
-                                setTimeout(paginaScannerizzazione, 700);
-                            }
-                            function fillBlu() {
-                                document.getElementById('divOscuramento').style.zIndex = "100";
-                                document.getElementById('divOscuramento').style.opacity = "0.7";
-                                document.getElementById('bottom-nav_button-qr').style.backgroundPosition = "bottom";
-                                setTimeout(fillGiallo, 600);
-                            }
-                            function clickQR() {
-                            // quando si clicca QR Code
-                                document.getElementById('bottom-nav_button-qr').style.zIndex = "101";
-                                document.getElementById('bottom-nav_button-qr').style.bottom = "calc(50% - 6vh)";
-                                document.getElementById('bottom-nav_button-qr').style.transform = "rotate(360deg)";
-                                setTimeout(fillBlu, 600);
-                            }
+				
+			    /*Funzioni per le animazioni dei bottoni "Home" e "Cerca", usate da page_navigation.js*/
                             function animOptHF(){ 
 				//operazioni dopo 150ms dal click di Home
                                 document.getElementById('searchE').style.top = "calc(45% - 2.25vh)";
@@ -60,7 +62,8 @@
                                 document.getElementById('homeE').style.opacity = "0";
                             }
                             function fullHome() {
-                            // quando si clicca Home
+                            	//quando si clicca Home
+				//Sostituisci l'icona vuota con quella piena e fai visualizzare la scritta "Home"
                                 document.getElementById('homeE').style.top = "calc(35% - 2.25vh)";
                                 document.getElementById('searchF').style.top = "calc(45% - 2.25vh)";
 
@@ -96,6 +99,8 @@
 
                                 //[...] VISUALIZZAZIONE PAGINA CERCA
                             }
+				
+			    /*Rende entrambe le icone, sia "Home" che "Cerca", deselezionate*/
                             function bothEmpty() {
                             // quando si preme qualsiasi cosa dopo il pulsante Cerca (es. sezione o Search)
                                 document.getElementById('homeE').style.opacity = "1";
