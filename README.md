@@ -37,8 +37,9 @@ Prima di poter rendere operativa la PWA, è necessario svolgere alcune operazion
 - Modificare il file `serverSide/base.php` inserendo le credenziali corrette per l'accesso al database (nome utente, password, hostname e nome del database)
 - Importare il file `databaseReperti.sql` nel proprio DBMS per avere con sé i dati dei reperti
 
-## Ulteriori documenti
+## Ulteriori documenti e collegamenti
 - Video tutorial e presentazione dell'app: Clicca [qui](https://drive.google.com/file/d/169M5yHPrrIfFpcWQDnKis5l-MhNmDXSO/view?usp=sharing) (non ho potuto caricarlo su GitHub per il limite di 25 MB sull'upload).
+- [Bacheca Trello](https://trello.com/invite/b/4Vwokeyv/2a303385ee1b0b4d10f29edb61bb32ce/view-miidm-app) per la gestione Agile delle cose da fare.
 
 ## Contatti
 Hai ancora qualche piccolo dubbio? Non c'hai capito na mazza? Contattami con una mail a [peppesteduto@gmail.com](mailto:peppesteduto@gmail.com)!
